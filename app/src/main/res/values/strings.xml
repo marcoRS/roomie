@@ -6,4 +6,5 @@
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
     <string name="add_words">Add Words</string>
+    <string name="add_some_words">add some words</string>
 </resources>
