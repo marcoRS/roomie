@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Room Words Sample</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_add_words">Add Words</string>
+    <string name="hint_word">Add a Word</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
 </resources>

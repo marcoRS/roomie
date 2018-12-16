@@ -22,7 +22,7 @@ class MainActivityFragment : Fragment() {
     super.onViewCreated(view, savedState)
     val adapter = WordListAdapter(view.context)
     recyclerview.adapter = adapter
-    recyclerview.layoutManager = LinearLayoutManager(activity!!)
+    recyclerview.layoutManager = LinearLayoutManager(activity)
 
     viewModel.allWords.observe(this, Observer<List<Word>> { words ->
       adapter.setWords(words)
