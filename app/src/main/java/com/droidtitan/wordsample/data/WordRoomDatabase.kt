@@ -26,20 +26,20 @@ abstract class WordRoomDatabase : RoomDatabase() {
 
     private fun buildDatabase(context: Context) =
         Room.databaseBuilder(context.applicationContext, WordRoomDatabase::class.java, "word_database")
-            .addCallback(object : RoomDatabase.Callback() {
-              override fun onOpen(db: SupportSQLiteDatabase) {
-                super.onOpen(db)
-                INSTANCE?.wordDao()?.apply {
-                  CoroutineScope(Dispatchers.IO).launch {
-                    deleteAll()
-                    val words = arrayOf("dolphin", "crocodile", "cobra")
-                    words.forEach { this@apply.insert(Word(it)) }
-                  }
-                }
-              }
-            })
-            // Wipes and rebuilds instead of migrating
-            .fallbackToDestructiveMigration()
+//            .addCallback(object : RoomDatabase.Callback() {
+//              override fun onOpen(db: SupportSQLiteDatabase) {
+//                super.onOpen(db)
+//                INSTANCE?.wordDao()?.apply {
+//                  CoroutineScope(Dispatchers.IO).launch {
+//                    deleteAll()
+//                    val words = arrayOf("dolphin", "crocodile", "cobra")
+//                    words.forEach { this@apply.insert(Word(it)) }
+//                  }
+//                }
+//              }
+//            })
+//            // Wipes and rebuilds instead of migrating
+//            .fallbackToDestructiveMigration()
             .build()
   }
 }

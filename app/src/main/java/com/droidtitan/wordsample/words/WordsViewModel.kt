@@ -4,10 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.droidtitan.wordsample.data.Word
 import com.droidtitan.wordsample.data.WordRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class WordsViewModel(private val repository: WordRepository) : ViewModel() {
 
@@ -18,8 +15,6 @@ class WordsViewModel(private val repository: WordRepository) : ViewModel() {
     get() = repository.allWords
 
   fun insert(word: String) {
-    // For a non suspend function that needs to run in the background you can also use
-    // withContext(Dispatchers.IO){} within launch
     uiScope.launch {
       repository.insert(word)
     }
@@ -28,5 +23,11 @@ class WordsViewModel(private val repository: WordRepository) : ViewModel() {
   override fun onCleared() {
     super.onCleared()
     job.cancel()
+  }
+
+  fun deleteAllWords() {
+    uiScope.launch {
+      withContext(Dispatchers.IO) { repository.deleteAllWords() }
+    }
   }
 }
