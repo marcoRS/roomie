@@ -1,4 +1,4 @@
-package com.droidtitan.wordsample
+package com.droidtitan.wordsample.words
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

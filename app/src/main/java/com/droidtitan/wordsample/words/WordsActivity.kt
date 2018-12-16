@@ -1,7 +1,8 @@
-package com.droidtitan.wordsample
+package com.droidtitan.wordsample.words
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.droidtitan.wordsample.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class WordsActivity : AppCompatActivity() {

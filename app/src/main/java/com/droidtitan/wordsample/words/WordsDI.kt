@@ -1,4 +1,4 @@
-package com.droidtitan.wordsample
+package com.droidtitan.wordsample.words
 
 import com.droidtitan.wordsample.data.WordRepository
 import com.droidtitan.wordsample.data.WordRoomDatabase

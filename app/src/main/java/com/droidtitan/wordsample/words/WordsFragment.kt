@@ -1,4 +1,4 @@
-package com.droidtitan.wordsample
+package com.droidtitan.wordsample.words
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.droidtitan.wordsample.R
 import com.droidtitan.wordsample.add.AddWordsActivity
 import com.droidtitan.wordsample.add.AddWordsFragment
 import com.droidtitan.wordsample.data.Word
@@ -36,7 +37,9 @@ class WordsFragment : Fragment() {
 
     fab.setOnClickListener {
       val intent = Intent(activity, AddWordsActivity::class.java)
-      startActivityForResult(intent, WordsFragment.NEW_WORD_REQUEST_CODE)
+      startActivityForResult(intent,
+        NEW_WORD_REQUEST_CODE
+      )
     }
   }
 
@@ -46,7 +49,8 @@ class WordsFragment : Fragment() {
     if (requestCode == NEW_WORD_REQUEST_CODE && resultCode == RESULT_OK) {
       data?.getStringExtra(AddWordsFragment.EXTRA_REPLY)?.apply { viewModel.insert(this) }
     } else {
-      Toast.makeText(context?.applicationContext, R.string.empty_not_saved, Toast.LENGTH_LONG)
+      Toast.makeText(context?.applicationContext,
+        R.string.empty_not_saved, Toast.LENGTH_LONG)
         .show()
     }
   }
