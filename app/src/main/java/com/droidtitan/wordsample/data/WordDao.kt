@@ -1,4 +1,4 @@
-package com.droidtitan.wordsample
+package com.droidtitan.wordsample.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

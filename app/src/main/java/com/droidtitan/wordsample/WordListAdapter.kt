@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.droidtitan.wordsample.data.Word
 
 class WordListAdapter(context: Context) : RecyclerView.Adapter<ViewHolder>() {
 

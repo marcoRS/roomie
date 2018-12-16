@@ -1,4 +1,4 @@
-package com.droidtitan.wordsample
+package com.droidtitan.wordsample.data
 
 import android.content.Context
 
@@ -20,7 +20,9 @@ abstract class WordRoomDatabase : RoomDatabase() {
     @Volatile private var INSTANCE: WordRoomDatabase? = null
 
     fun getDatabase(context: Context): WordRoomDatabase =
-        INSTANCE ?: synchronized(this) { INSTANCE ?: buildDatabase(context).also { INSTANCE = it } }
+        INSTANCE
+          ?: synchronized(this) { INSTANCE
+            ?: buildDatabase(context).also { INSTANCE = it } }
 
     private fun buildDatabase(context: Context) =
         Room.databaseBuilder(context.applicationContext, WordRoomDatabase::class.java, "word_database")

@@ -11,11 +11,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.droidtitan.wordsample.add.AddWordsActivity
-import com.droidtitan.wordsample.add.AddWordsActivityFragment
+import com.droidtitan.wordsample.add.AddWordsFragment
+import com.droidtitan.wordsample.data.Word
 import kotlinx.android.synthetic.main.fragment_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainFragment : Fragment() {
+class WordsFragment : Fragment() {
 
   private val viewModel: WordsViewModel by viewModel()
 
@@ -35,7 +36,7 @@ class MainFragment : Fragment() {
 
     fab.setOnClickListener {
       val intent = Intent(activity, AddWordsActivity::class.java)
-      startActivityForResult(intent, MainFragment.NEW_WORD_REQUEST_CODE)
+      startActivityForResult(intent, WordsFragment.NEW_WORD_REQUEST_CODE)
     }
   }
 
@@ -43,10 +44,7 @@ class MainFragment : Fragment() {
     super.onActivityResult(requestCode, resultCode, data)
 
     if (requestCode == NEW_WORD_REQUEST_CODE && resultCode == RESULT_OK) {
-      data?.getStringExtra(AddWordsActivityFragment.EXTRA_REPLY)?.apply {
-        viewModel.insert(this)
-      }
-
+      data?.getStringExtra(AddWordsFragment.EXTRA_REPLY)?.apply { viewModel.insert(this) }
     } else {
       Toast.makeText(context?.applicationContext, R.string.empty_not_saved, Toast.LENGTH_LONG)
         .show()

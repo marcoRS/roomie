@@ -1,4 +1,4 @@
-package com.droidtitan.wordsample
+package com.droidtitan.wordsample.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
