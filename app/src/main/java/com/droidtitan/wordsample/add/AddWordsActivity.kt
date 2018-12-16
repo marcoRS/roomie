@@ -14,7 +14,7 @@ class AddWordsActivity : AppCompatActivity() {
 
     supportActionBar?.apply {
       setDisplayHomeAsUpEnabled(true)
-      title = "Add Words"
+      title = getString(R.string.add_words)
     }
   }
 }

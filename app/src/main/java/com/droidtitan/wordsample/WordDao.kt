@@ -8,7 +8,7 @@ import androidx.room.Query
 @Dao
 interface WordDao {
   @Insert
-  fun insert(word: Word)
+  suspend fun insert(word: Word)
 
   @Query("DELETE FROM word_table")
   fun deleteAll()

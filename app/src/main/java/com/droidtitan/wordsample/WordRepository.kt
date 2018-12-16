@@ -7,7 +7,7 @@ class WordRepository internal constructor(private val wordDao: WordDao) {
   val allWords: LiveData<List<Word>> = wordDao.getAllWords()
 
   @WorkerThread
-  fun insert(word: Word) {
+  suspend fun insert(word: Word) {
     wordDao.insert(word)
   }
 }

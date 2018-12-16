@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:hint="@string/hint_word"
-        app:layout_constraintBottom_toTopOf="@+id/button_save"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -23,14 +23,14 @@
         app:layout_constraintVertical_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_word"
+            android:id="@+id/editWord"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textAutoComplete" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button_save"
+        android:id="@+id/buttonSave"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:text="@string/button_save"
