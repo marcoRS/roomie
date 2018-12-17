@@ -3,13 +3,13 @@ package com.droidtitan.wordsample.words
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.droidtitan.wordsample.BaseAppCompatActivity
 import com.droidtitan.wordsample.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class WordsActivity : AppCompatActivity() {
+class WordsActivity : BaseAppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)

@@ -20,11 +20,12 @@
     <style name="text_view_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Display2</item>
         <item name="android:background">@color/colorPrimaryDark</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:padding">16dp</item>
+        <item name="fontPath">fonts/unica-one-regular.ttf</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="android:textColor">@color/colorTextPrimary</item>
     </style>
