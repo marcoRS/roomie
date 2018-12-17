@@ -10,7 +10,7 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper
  */
 @SuppressLint("Registered")
 abstract class BaseAppCompatActivity : AppCompatActivity() {
-  
+
   override fun attachBaseContext(newBase: Context) {
     super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))
   }
