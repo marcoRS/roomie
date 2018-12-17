@@ -1,4 +1,4 @@
-package com.droidtitan.wordsample
+package com.droidtitan.roomie
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

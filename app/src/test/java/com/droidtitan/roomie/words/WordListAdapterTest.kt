@@ -1,8 +1,8 @@
-package com.droidtitan.wordsample.words
+package com.droidtitan.roomie.words
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
-import com.droidtitan.wordsample.data.Word
+import com.droidtitan.roomie.data.Word
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith

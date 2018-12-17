@@ -1,7 +1,7 @@
-package com.droidtitan.wordsample
+package com.droidtitan.roomie
 
 import android.app.Application
-import com.droidtitan.wordsample.words.wordsModule
+import com.droidtitan.roomie.words.wordsModule
 import io.github.inflationx.calligraphy3.CalligraphyConfig
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor
 import io.github.inflationx.viewpump.ViewPump

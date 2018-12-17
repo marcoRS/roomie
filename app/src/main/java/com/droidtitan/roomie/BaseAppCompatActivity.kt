@@ -1,4 +1,4 @@
-package com.droidtitan.wordsample
+package com.droidtitan.roomie
 
 import android.annotation.SuppressLint
 import android.content.Context

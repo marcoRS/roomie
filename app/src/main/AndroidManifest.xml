@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.droidtitan.wordsample">
+    package="com.droidtitan.roomie">
 
     <application
-        android:name=".App"
+        android:name="com.droidtitan.roomie.App"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".words.WordsActivity"
+            android:name="com.droidtitan.roomie.words.WordsActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -23,13 +23,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".add.AddWordsActivity"
+            android:name="com.droidtitan.roomie.add.AddWordsActivity"
             android:label="@string/title_activity_add_words"
-            android:parentActivityName=".words.WordsActivity"
+            android:parentActivityName="com.droidtitan.roomie.words.WordsActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.droidtitan.wordsample.words.WordsActivity" />
+                android:value="com.droidtitan.roomie.words.WordsActivity" />
         </activity>
     </application>
 

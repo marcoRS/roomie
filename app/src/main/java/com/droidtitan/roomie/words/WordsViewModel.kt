@@ -1,9 +1,9 @@
-package com.droidtitan.wordsample.words
+package com.droidtitan.roomie.words
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.droidtitan.wordsample.data.Word
-import com.droidtitan.wordsample.data.WordRepository
+import com.droidtitan.roomie.data.Word
+import com.droidtitan.roomie.data.WordRepository
 import kotlinx.coroutines.*
 
 class WordsViewModel(private val repository: WordRepository) : ViewModel() {

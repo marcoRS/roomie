@@ -1,10 +1,10 @@
-package com.droidtitan.wordsample.words
+package com.droidtitan.roomie.words
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import com.droidtitan.wordsample.BaseAppCompatActivity
-import com.droidtitan.wordsample.R
+import com.droidtitan.roomie.BaseAppCompatActivity
+import com.droidtitan.roomie.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*

@@ -1,4 +1,4 @@
-package com.droidtitan.wordsample.add
+package com.droidtitan.roomie.add
 
 import android.app.Activity
 import android.app.Activity.RESULT_CANCELED
@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
-import com.droidtitan.wordsample.R
+import com.droidtitan.roomie.R
 import kotlinx.android.synthetic.main.fragment_add_words.*
 
 class AddWordsFragment : Fragment() {

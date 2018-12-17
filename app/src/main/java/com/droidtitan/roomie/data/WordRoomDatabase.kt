@@ -1,4 +1,4 @@
-package com.droidtitan.wordsample.data
+package com.droidtitan.roomie.data
 
 import android.content.Context
 
