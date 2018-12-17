@@ -15,7 +15,7 @@ class WordListAdapter(context: Context) : RecyclerView.Adapter<ViewHolder>() {
   private var words: List<Word>? = null
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-    return object : ViewHolder(inflater.inflate(R.layout.recyclerview_item, parent, false)) {}
+    return object : ViewHolder(inflater.inflate(R.layout.row_word, parent, false)) {}
   }
 
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {

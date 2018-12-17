@@ -12,7 +12,7 @@ import com.droidtitan.roomie.R
 import com.droidtitan.roomie.add.AddWordsActivity
 import com.droidtitan.roomie.add.AddWordsFragment
 import com.droidtitan.roomie.data.Word
-import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_words.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WordsFragment : Fragment() {
@@ -21,7 +21,7 @@ class WordsFragment : Fragment() {
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedState: Bundle?): View? {
     setHasOptionsMenu(true)
-    return inflater.inflate(R.layout.fragment_main, container, false)
+    return inflater.inflate(R.layout.fragment_words, container, false)
   }
 
   override fun onViewCreated(view: View, savedState: Bundle?) {
