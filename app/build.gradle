@@ -12,6 +12,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // Enabled to avoid
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {

@@ -54,10 +54,10 @@ class WordsFragment : Fragment() {
   }
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean =
-    when (item.itemId) {
-      R.id.delete_all -> viewModel.deleteAllWords().let { true }
-      else -> super.onOptionsItemSelected(item)
-    }
+      when (item.itemId) {
+        R.id.delete_all -> viewModel.deleteAllWords().let { true }
+        else -> super.onOptionsItemSelected(item)
+      }
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     super.onActivityResult(requestCode, resultCode, data)
