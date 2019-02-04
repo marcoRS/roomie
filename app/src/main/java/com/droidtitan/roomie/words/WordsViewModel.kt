@@ -14,7 +14,7 @@ class WordsViewModel(private val repository: WordRepository) : ViewModel(), Coro
   private val job = Job() // Used to explicitly cancel all coroutines in this scope.
 
   override val coroutineContext: CoroutineContext
-    get() = Dispatchers.Main + job
+    get() = Dispatchers.Main + job // By default child coroutines will run on the main thread.
 
   val allWords: LiveData<List<Word>>
     get() = repository.allWords
@@ -26,13 +26,13 @@ class WordsViewModel(private val repository: WordRepository) : ViewModel(), Coro
   }
 
   fun deleteAllWords() {
-    launch(Dispatchers.IO) {
+    launch(Dispatchers.IO) { // Explicitly specify which context to run on, IO in this case.
       repository.deleteAllWords()
     }
   }
 
   override fun onCleared() {
     super.onCleared()
-    job.cancel()
+    job.cancel() // Parent Job cancels all child coroutines.
   }
 }
