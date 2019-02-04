@@ -10,11 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/RoomieTheme">
         <activity
             android:name="com.droidtitan.roomie.words.WordsActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/RoomieTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -26,7 +26,7 @@
             android:name="com.droidtitan.roomie.add.AddWordsActivity"
             android:label="@string/title_activity_add_words"
             android:parentActivityName="com.droidtitan.roomie.words.WordsActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/RoomieTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.droidtitan.roomie.words.WordsActivity" />
