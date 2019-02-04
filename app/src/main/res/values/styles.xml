@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -25,8 +26,7 @@
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:padding">16dp</item>
-        <item name="fontPath">fonts/unica-one-regular.ttf</item>
-        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:fontFamily">@font/unica_one_regular</item>
         <item name="android:textColor">@color/colorTextPrimary</item>
     </style>
 </resources>

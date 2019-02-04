@@ -1,11 +1,11 @@
 package com.droidtitan.roomie.add
 
 import android.os.Bundle
-import com.droidtitan.roomie.BaseAppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.droidtitan.roomie.R
 import kotlinx.android.synthetic.main.activity_add_words.*
 
-class AddWordsActivity : BaseAppCompatActivity() {
+class AddWordsActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)

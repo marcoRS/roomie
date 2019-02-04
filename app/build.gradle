@@ -43,11 +43,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-coroutines:$room_version"
-
     implementation 'org.koin:koin-androidx-viewmodel:1.0.1'
-
-    implementation 'io.github.inflationx:calligraphy3:3.0.0'
-    implementation 'io.github.inflationx:viewpump:1.0.0'
 
     testImplementation "androidx.room:room-testing:$room_version"
     testImplementation 'junit:junit:4.12'
