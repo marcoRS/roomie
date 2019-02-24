@@ -6,15 +6,17 @@ import com.droidtitan.roomie.data.Word
 import com.droidtitan.roomie.data.WordRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
-class WordsViewModel(private val repository: WordRepository) : ViewModel(), CoroutineScope {
-  private val job = Job() // Used to explicitly cancel all coroutines in this scope.
+class WordsViewModel(
+  private val uiContext: CoroutineContext = Dispatchers.Main,
+  private val repository: WordRepository
+) : ViewModel(), CoroutineScope {
 
   override val coroutineContext: CoroutineContext
-    get() = Dispatchers.Main + job // By default child coroutines will run on the main thread.
+    get() = uiContext // By default child coroutines will run on the main thread.
 
   val allWords: LiveData<List<Word>>
     get() = repository.allWords
@@ -26,13 +28,14 @@ class WordsViewModel(private val repository: WordRepository) : ViewModel(), Coro
   }
 
   fun deleteAllWords() {
-    launch(Dispatchers.IO) { // Explicitly specify which context to run on, IO in this case.
+    launch(Dispatchers.IO) {
+      // Explicitly specify which context to run on, IO in this case.
       repository.deleteAllWords()
     }
   }
 
   override fun onCleared() {
     super.onCleared()
-    job.cancel() // Parent Job cancels all child coroutines.
+    coroutineContext.cancel() // Parent Job cancels all child coroutines.
   }
 }
