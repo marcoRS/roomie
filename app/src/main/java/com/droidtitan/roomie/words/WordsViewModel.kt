@@ -6,17 +6,15 @@ import com.droidtitan.roomie.data.Word
 import com.droidtitan.roomie.data.WordRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.cancel
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
-class WordsViewModel(
-  private val uiContext: CoroutineContext = Dispatchers.Main,
-  private val repository: WordRepository
-) : ViewModel(), CoroutineScope {
+class WordsViewModel(private val repository: WordRepository) : ViewModel(), CoroutineScope {
+  private val job: Job = Job()
 
   override val coroutineContext: CoroutineContext
-    get() = uiContext // By default child coroutines will run on the main thread.
+    get() = Dispatchers.Main + job // By default child coroutines will run on the main thread.
 
   val allWords: LiveData<List<Word>>
     get() = repository.allWords
@@ -36,6 +34,6 @@ class WordsViewModel(
 
   override fun onCleared() {
     super.onCleared()
-    coroutineContext.cancel() // Parent Job cancels all child coroutines.
+    job.cancel() // Parent Job cancels all child coroutines.
   }
 }

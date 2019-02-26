@@ -10,5 +10,5 @@ import org.koin.dsl.module.module
 val wordsModule = module {
   factory { WordRoomDatabase.getDatabase(androidApplication()).wordDao() }
   factory { WordRepository(get()) }
-  viewModel { WordsViewModel(Dispatchers.Main, get()) }
+  viewModel { WordsViewModel(get()) }
 }
