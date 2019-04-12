@@ -4,14 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.droidtitan.roomie.data.Word
 import com.droidtitan.roomie.data.WordRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 class WordsViewModel(private val repository: WordRepository) : ViewModel(), CoroutineScope {
-  private val job: Job = Job()
+  private val job: Job = SupervisorJob()
 
   override val coroutineContext: CoroutineContext
     get() = Dispatchers.Main + job // By default child coroutines will run on the main thread.
@@ -20,14 +17,13 @@ class WordsViewModel(private val repository: WordRepository) : ViewModel(), Coro
     get() = repository.allWords
 
   fun insert(word: String) {
-    launch(Dispatchers.IO) {
+    launch {
       repository.insert(word)
     }
   }
 
   fun deleteAllWords() {
-    launch(Dispatchers.IO) {
-      // Explicitly specify which context to run on, IO in this case.
+    launch {
       repository.deleteAllWords()
     }
   }
