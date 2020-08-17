@@ -18,11 +18,7 @@ class WordsFragment : Fragment() {
 
   private val viewModel: WordsViewModel by sharedViewModel()
 
-  override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedState: Bundle?
-  ): View? {
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedState: Bundle?): View? {
     setHasOptionsMenu(true)
     return inflater.inflate(R.layout.fragment_words, container, false)
   }

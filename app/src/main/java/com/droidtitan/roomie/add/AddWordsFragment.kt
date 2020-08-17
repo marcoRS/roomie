@@ -6,15 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.droidtitan.roomie.R
+import com.droidtitan.roomie.utils.BaseBottomSheet
 import com.droidtitan.roomie.utils.hideKeyboard
 import com.droidtitan.roomie.words.WordsViewModel
 import kotlinx.android.synthetic.main.fragment_add_words.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class AddWordsFragment : Fragment() {
+class AddWordsFragment : BaseBottomSheet() {
 
   private val viewModel: WordsViewModel by sharedViewModel()
 

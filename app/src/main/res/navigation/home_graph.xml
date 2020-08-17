@@ -19,11 +19,10 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
-    <fragment
+    <dialog
         android:id="@+id/AddNewWord"
         android:name="com.droidtitan.roomie.add.AddWordsFragment"
         android:label="Adds Words"
         tools:layout="@layout/fragment_add_words" />
-
 
 </navigation>
