@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorScreenBackground"
-    tools:context=".add.AddWordsFragment"
-    tools:showIn="@layout/activity_add_words">
+    tools:context=".add.AddWordsFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_word_input_layout"

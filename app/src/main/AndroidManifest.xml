@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/RoomieTheme">
         <activity
-            android:name="com.droidtitan.roomie.words.WordsActivity"
+            android:name="com.droidtitan.roomie.words.HomeActivity"
             android:label="@string/app_name"
             android:theme="@style/RoomieTheme.NoActionBar">
             <intent-filter>
@@ -21,15 +21,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.droidtitan.roomie.add.AddWordsActivity"
-            android:label="@string/title_activity_add_words"
-            android:parentActivityName="com.droidtitan.roomie.words.WordsActivity"
-            android:theme="@style/RoomieTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.droidtitan.roomie.words.WordsActivity" />
         </activity>
     </application>
 

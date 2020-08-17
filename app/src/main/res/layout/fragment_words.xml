@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".words.WordsFragment"
-    tools:showIn="@layout/activity_words">
+    tools:showIn="@layout/activity_home">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
@@ -34,5 +34,17 @@
             app:drawableTopCompat="@drawable/ic_roomie_logo"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
             android:textColor="@color/colorAccent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorAccent"
+        android:layout_gravity="bottom|end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add_white_24dp"
+        app:tint="#FFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

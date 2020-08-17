@@ -5,17 +5,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.droidtitan.roomie.R
-import com.droidtitan.roomie.add.AddWordsActivity
 import com.droidtitan.roomie.add.AddWordsFragment
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_words.*
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class WordsFragment : Fragment() {
 
-  private val viewModel: WordsViewModel by viewModel()
+  private val viewModel: WordsViewModel by sharedViewModel()
 
   override fun onCreateView(
     inflater: LayoutInflater,
@@ -37,17 +38,16 @@ class WordsFragment : Fragment() {
       }
     })
 
+    fab.setOnClickListener {
+      findNavController().navigate(R.id.AddNewWord)
+    }
+
     recyclerview.adapter = adapter
     recyclerview.layoutManager = LinearLayoutManager(activity)
 
     viewModel.allWords.observe(viewLifecycleOwner) { words ->
       adapter.setWords(words)
     }
-  }
-
-  fun onFabClick() {
-    val intent = Intent(activity, AddWordsActivity::class.java)
-    startActivityForResult(intent, NEW_WORD_REQUEST_CODE)
   }
 
   override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -63,6 +63,10 @@ class WordsFragment : Fragment() {
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     super.onActivityResult(requestCode, resultCode, data)
+
+    if (resultCode != RESULT_OK) {
+      Snackbar.make(fab, R.string.empty_not_saved, Snackbar.LENGTH_LONG).show()
+    }
 
     if (requestCode == NEW_WORD_REQUEST_CODE && resultCode == RESULT_OK) {
       data?.getStringExtra(AddWordsFragment.EXTRA_REPLY)?.apply { viewModel.insert(this) }
