@@ -5,13 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.droidtitan.roomie.R
 import com.droidtitan.roomie.add.AddWordsActivity
 import com.droidtitan.roomie.add.AddWordsFragment
-import com.droidtitan.roomie.data.Word
 import kotlinx.android.synthetic.main.fragment_words.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -19,7 +17,11 @@ class WordsFragment : Fragment() {
 
   private val viewModel: WordsViewModel by viewModel()
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedState: Bundle?): View? {
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedState: Bundle?
+  ): View? {
     setHasOptionsMenu(true)
     return inflater.inflate(R.layout.fragment_words, container, false)
   }
@@ -38,9 +40,9 @@ class WordsFragment : Fragment() {
     recyclerview.adapter = adapter
     recyclerview.layoutManager = LinearLayoutManager(activity)
 
-    viewModel.allWords.observe(this, Observer<List<Word>> { words ->
+    viewModel.allWords.observe(viewLifecycleOwner) { words ->
       adapter.setWords(words)
-    })
+    }
   }
 
   fun onFabClick() {
@@ -54,10 +56,10 @@ class WordsFragment : Fragment() {
   }
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean =
-      when (item.itemId) {
-        R.id.delete_all -> viewModel.deleteAllWords().let { true }
-        else -> super.onOptionsItemSelected(item)
-      }
+    when (item.itemId) {
+      R.id.delete_all -> viewModel.deleteAllWords().let { true }
+      else -> super.onOptionsItemSelected(item)
+    }
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     super.onActivityResult(requestCode, resultCode, data)
