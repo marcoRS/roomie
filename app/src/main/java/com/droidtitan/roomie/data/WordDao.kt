@@ -1,9 +1,9 @@
 package com.droidtitan.roomie.data
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface WordDao {
@@ -14,5 +14,5 @@ interface WordDao {
   suspend fun deleteAll()
 
   @Query("SELECT * from word_table ORDER BY word ASC")
-  fun getAllWords(): LiveData<List<Word>>
+  fun getAllWords(): Flow<List<Word>>
 }
